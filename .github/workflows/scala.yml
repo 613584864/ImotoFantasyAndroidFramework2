@@ -1,0 +1,34 @@
+#此工作流使用未经GitHub认证的操作。
+#它们由第三方提供，并由
+#单独的服务条款、隐私政策和支持
+#documentation。
+
+姓名:Scala CI
+
+在……之上:
+推:
+分支机构:[ "主要" ]
+pull_request:
+分支机构:[ "主要" ]
+
+权限:
+内容:读
+
+工作:
+建立:
+
+run-on:ubuntu-最新
+
+步骤:
+-uses:操作/结帐@v4
+-姓名:设置JDK11
+uses:操作/设置-java@v4
+和……一起:
+java版:'11'
+分布:'temurin'
+缓存:'SBT'
+-姓名:运行测试
+跑:SBT试验
+      #可选：此步骤将信息上载到GitHub依赖关系图并取消阻止存储库的Dependabot警报
+-姓名:上载依赖关系图
+uses:scalcenter/sbt-dependency-submission@ab086b50c947c9774b70f39fc7f6e20ca2706c91
